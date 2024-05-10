@@ -1,4 +1,5 @@
 /* Base styles for body, headers, and containers */
+{% load static %}
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
