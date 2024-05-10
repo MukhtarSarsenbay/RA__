@@ -1,0 +1,59 @@
+{% load static %} <!-- Make sure to load the static template tag -->
+<!DOCTYPE html>
+<html>
+{% include 'head.html' %}
+<body>
+
+    <div class="container">
+
+        <form method="post" class="input-form">
+            {% csrf_token %}
+              <div class="input-container">
+                <label for="values">Volume water content:</label>
+                <input type="text" maxlength="1000" minlength="1" name="values" id="values" required>
+            </div>
+
+            <div class="input-container">
+                <label for="values1">Suction:</label>
+                <input type="text" maxlength="1000" minlength="1" name="values1" id="values1" required>
+            </div>
+            <div class="input-container">
+                <label for="tetta_max">tetta_max:</label>
+                <input type="number" name="tetta_max" id="tetta_max" step="any" required>
+            </div>
+
+
+
+<!--            -->
+<!--            <div class="input-container">-->
+<!--                <label for="tetta_mid">tetta_mid:</label>-->
+<!--                <input type="number" name="tetta_mid" id="tetta_mid" step="any" required>-->
+<!--            </div>-->
+<!--            <div class="input-container">-->
+<!--                <label for="tetta_min">tetta_min:</label>-->
+<!--                <input type="number" name="tetta_min" id="tetta_min" step="any" required>-->
+<!--            </div>-->
+<!--            <div class="input-container">-->
+<!--                <label for="psi_ws1">psi_ws1:</label>-->
+<!--                <input type="number" name="psi_ws1" id="psi_ws1" step="any" required>-->
+<!--            </div>-->
+<!--            <div class="input-container">-->
+<!--                <label for="psi_ws2">psi_ws2:</label>-->
+<!--                <input type="number" name="psi_ws2" id="psi_ws2" step="any" required>-->
+<!--            </div>-->
+<!--            <div class="input-container">-->
+<!--                <label for="psi_we2">psi_we2:</label>-->
+<!--                <input type="number" name="psi_we2" id="psi_we2" step="any" required>-->
+<!--            </div>-->
+<!--            <div class="input-container">-->
+<!--                <label for="psi_max">psi_max:</label>-->
+<!--                <input type="number" name="psi_max" id="psi_max" step="any" required>-->
+<!--            </div>-->
+
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% load static %} <!-- Make sure to load the static template tag -->
+<!DOCTYPE html>
+<html>
+{% include 'head.html' %}
+<body>
+
+    <div class="container">
+
+        <form method="post" class="input-form">
+            {% csrf_token %}
+              <div class="input-container">
+                <label for="values">Volume water content:</label>
+                <input type="text" maxlength="1000" minlength="1" name="values" id="values" required>
+            </div>
+
+            <div class="input-container">
+                <label for="values1">Suction:</label>
+                <input type="text" maxlength="1000" minlength="1" name="values1" id="values1" required>
+            </div>
+
+            <div class="input-container">
+                <label for="a">a:</label>
+                <input type="number" name="a" id="a" step="any" required>
+            </div>
+
+            <div class="input-container">
+                <label for="n">n:</label>
+                <input type="number" name="n" id="n" step="any" required>
+            </div>
+
+            <div class="input-container">
+                <label for="m">m:</label>
+                <input type="number" name="m" id="m" step="any" required>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+</body>
+</html>

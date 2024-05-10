@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main_page_style.css' %}">
+</head>
+
+<body>
+    <h1>Soil-water Characteristic Curve Model</h1>
+    <!-- Equation Models -->
+    <section>
+        <h2>Equation Models</h2>
+        <div class="experiment-buttons">
+            <a href="graph"><button class="primary-button">Fredlund and Xing equation with correction factor</button></a>
+            <a href="second_formula"><button class="primary-button">Fredlund and Xing equation without correction factor</button></a>
+            <a href="difficult_formula"><button class="primary-button">Last Formula</button></a>
+        </div>
+    </section>
+
+    <!-- Management Tools -->
+    <section>
+        <h2>Management Tools</h2>
+        <div class="experiment-buttons">
+            <button class="secondary-button">Manage A</button>
+            <button class="secondary-button">Manage Experiments</button>
+            <button class="secondary-button">OHAUS Precision Balance</button>
+        </div>
+    </section>
+
+    <!-- Device Settings -->
+    <section>
+        <h2>Device Settings</h2>
+        <div class="experiment-buttons">
+            <button class="secondary-button">PR2202</button>
+            <button class="secondary-button">Development</button>
+            <button class="secondary-button">Settings</button>
+        </div>
+    </section>
+
+    <!-- Additional Tools -->
+    <section>
+        <h2>Additional Tools</h2>
+        <div class="experiment-buttons">
+            <button class="secondary-button">RK520-01</button>
+            <button class="secondary-button">Soil Water Suction</button>
+        </div>
+    </section>
+</body>
+
+</html>
