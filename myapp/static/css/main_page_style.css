@@ -1,4 +1,5 @@
 /* General body and section styling for a cleaner look */
+{% load static %}
 body {
     font-family: Arial, sans-serif; /* Ensures a modern, readable font is used */
     margin: 20px;
