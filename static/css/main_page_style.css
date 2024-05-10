@@ -1,0 +1,70 @@
+/* General body and section styling for a cleaner look */
+body {
+    font-family: Arial, sans-serif; /* Ensures a modern, readable font is used */
+    margin: 20px;
+    background: #f4f4f9; /* Light background to reduce eye strain */
+    color: #333; /* Darker text for better readability */
+}
+
+h1, h2 {
+    color: #0056b3; /* Adds color to headings for better visual hierarchy */
+    margin-bottom: 10px;
+}
+
+/* Styling for primary buttons, which are more important actions */
+.primary-button {
+    background-color: #4CAF50; /* Green color indicates primary actions */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.primary-button:hover, .primary-button:focus {
+    background-color: #45a049; /* Darker green on hover/focus for feedback */
+}
+
+/* Styling for secondary buttons, which are less critical actions */
+.secondary-button {
+    background-color: #008CBA; /* Blue color indicates secondary actions */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.secondary-button:hover, .secondary-button:focus {
+    background-color: #007BAA; /* Slightly darker blue on hover/focus */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .primary-button, .secondary-button {
+        padding: 12px 24px; /* Larger padding for easier touch */
+        font-size: 18px; /* Larger font size for readability on small devices */
+        margin: 10px 5px; /* More space around buttons to avoid accidental taps */
+    }
+}
+
+/* Ensure all clickable elements are accessible via keyboard */
+a, button {
+    outline: none; /* Removes the default focus outline */
+}
+
+a:focus, button:focus {
+    outline: 2px solid #0056b3; /* Custom focus outline for accessibility */
+}
