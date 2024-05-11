@@ -1,71 +1,106 @@
-/* General body and section styling for a cleaner look */
+/* Base styles for body, headers, and containers */
 {% load static %}
 body {
-    font-family: Arial, sans-serif; /* Ensures a modern, readable font is used */
-    margin: 20px;
-    background: #f4f4f9; /* Light background to reduce eye strain */
-    color: #333; /* Darker text for better readability */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
 }
 
-h1, h2 {
-    color: #0056b3; /* Adds color to headings for better visual hierarchy */
-    margin-bottom: 10px;
-}
-
-/* Styling for primary buttons, which are more important actions */
-.primary-button {
-    background-color: #4CAF50; /* Green color indicates primary actions */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 15px 32px;
+header {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px 0;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 2px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 24px;
 }
 
-.primary-button:hover, .primary-button:focus {
-    background-color: #45a049; /* Darker green on hover/focus for feedback */
-}
-
-/* Styling for secondary buttons, which are less critical actions */
-.secondary-button {
-    background-color: #008CBA; /* Blue color indicates secondary actions */
-    color: white;
-    border: none;
+.container {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+}
+
+/* Form and input styling */
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.input-container label {
+    margin-right: 10px;
+    width: 150px; /* Fixed width for labels */
+}
+
+.input-container input, .input-container select {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button styling */
+button {
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 5px 2px;
+    background-color: #4CAF50; /* Primary button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-.secondary-button:hover, .secondary-button:focus {
-    background-color: #007BAA; /* Slightly darker blue on hover/focus */
+button:hover {
+    background-color: #45a049;
 }
 
-/* Responsive design adjustments */
+/* Graph container and image styling */
+.graph {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.graph img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Error and values display styling */
+.total-error, .wanted-values, .input-values {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #e8e8e8; /* Light grey background for sections */
+    border-radius: 5px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .primary-button, .secondary-button {
-        padding: 12px 24px; /* Larger padding for easier touch */
-        font-size: 18px; /* Larger font size for readability on small devices */
-        margin: 10px 5px; /* More space around buttons to avoid accidental taps */
+    .input-container, button {
+        flex-direction: column;
+        width: 100%;
     }
-}
 
-/* Ensure all clickable elements are accessible via keyboard */
-a, button {
-    outline: none; /* Removes the default focus outline */
-}
+    .input-container label, .input-container input, .input-container select, button {
+        margin-bottom: 5px;
+        width: 100%; /* Ensure full width for better touch */
+    }
 
-a:focus, button:focus {
-    outline: 2px solid #0056b3; /* Custom focus outline for accessibility */
+    header, body, button {
+        font-size: 20px; /* Larger text for better readability */
+    }
+
+    body, header, .container {
+        padding: 10px; /* Reduced padding for more space */
+    }
 }
