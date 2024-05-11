@@ -91,15 +91,16 @@ button:hover {
         width: 100%;
     }
 
-    .input-container label {
+    .input-container label, .input-container input, .input-container select, button {
         margin-bottom: 5px;
+        width: 100%; /* Ensure full width for better touch */
     }
 
-    .input-container input, .input-container select, button {
-        width: 100%;
+    header, body, button {
+        font-size: 20px; /* Larger text for better readability */
     }
 
-    header {
-        font-size: 20px;
+    body, header, .container {
+        padding: 10px; /* Reduced padding for more space */
     }
 }
