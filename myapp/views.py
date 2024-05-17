@@ -1107,7 +1107,7 @@ def difficult_formula(request):
 
         # Function to prevent overflow in exponential calculations
         def safe_exp(x):
-            max_exp_arg = 700  # Define a max value to prevent overflow
+            max_exp_arg = 2000  # Define a max value to prevent overflow
             return math.exp(max(-max_exp_arg, min(x, max_exp_arg)))
 
         # Soil water characteristic function with given parameters
@@ -1148,23 +1148,25 @@ def difficult_formula(request):
             return mse
 
         # Initial guesses and bounds for parameters
-        x0 = [tetta_max / 2, 0.01, 0.01, 100, 100, 1000]
-        bounds = [(tetta_max / 2, tetta_max), (0.01, tetta_max / 2), (0.01, 100), (100, 10000), (100, 10000),
-                  (1000, 1000000)]
+        x0 = [tetta_max-0.09 , tetta_mid/2,0.01, 0.01, 100, 100, 1000]
+        bounds = [(tetta_max-0.09, tetta_max), (tetta_mid/2, tetta_max), (0.01, 100), (100, 2000), (100, 2000),
+                  (1000, 10000)]
 
         # Perform optimization using differential evolution
-        result = differential_evolution(
-            objective,
-            bounds=bounds,
-            strategy='best1bin',
-            maxiter=100,  # Increased number of iterations
-            popsize=15,  # Larger population size to explore more solutions
-            tol=1e-10,  # Smaller tolerance for more precise convergence
-            mutation=(0.6, 1.2),  # Fine-tune mutation
-            recombination=0.7,  # Higher recombination rate
-            polish=True,  # Enable polishing to refine the final solution
-            seed=42  # Optional: Set seed for reproducible results
-        )
+        # result = differential_evolution(
+        #     objective,
+        #     bounds=bounds,
+        #     strategy='best1bin',
+        #     maxiter=100,  # Increased number of iterations
+        #     popsize=12,  # Larger population size to explore more solutions
+        #     tol=1e-10,  # Smaller tolerance for more precise convergence
+        #     mutation=(0.6, 1.2),  # Fine-tune mutation
+        #     recombination=0.7,  # Higher recombination rate
+        #     polish=True,  # Enable polishing to refine the final solution
+        #     seed=42  # Optional: Set seed for reproducible results
+        # )
+        # result = differential_evolution(objective, bounds)
+        result = differential_evolution(objective, bounds, strategy='best1bin', maxiter=100, popsize=15, tol=1e-6)
 
         # Extract the optimized parameters
         opt_tetta_mid, opt_tetta_min, opt_psi_ws1, opt_psi_ws2, opt_psi_we2, opt_psi_max = result.x
