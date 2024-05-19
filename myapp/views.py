@@ -1148,8 +1148,8 @@ def difficult_formula(request):
             return mse
 
         # Initial guesses and bounds for parameters
-        x0 = [tetta_max/2 , tetta_mid/2,0.01, 0.01, 100, 100, 1000]
-        bounds = [(tetta_max/2, tetta_max), (tetta_mid/2, tetta_max), (0.01, 100), (100, 2000), (100, 2000),
+        x0 = [tetta_max/2 , tetta_mid/1.001,0.01, 0.01, 100, 100, 1000]
+        bounds = [(tetta_max/2, tetta_max), (tetta_mid/1.001, tetta_max), (0.01, 100), (100, 2000), (100, 2000),
                   (1000, 10000)]
 
         # Perform optimization using differential evolution
