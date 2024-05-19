@@ -1107,7 +1107,7 @@ def difficult_formula(request):
 
         # Function to prevent overflow in exponential calculations
         def safe_exp(x):
-            max_exp_arg = 2000  # Define a max value to prevent overflow
+            max_exp_arg = 700  # Define a max value to prevent overflow
             return math.exp(max(-max_exp_arg, min(x, max_exp_arg)))
 
         # Soil water characteristic function with given parameters
